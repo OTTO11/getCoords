@@ -17,13 +17,13 @@
 <pre>print_r(getCoords(array('49/1,57/1,438047/100000','82/1,36/1,2434283/100000')));</pre>
 
 <pre>function getCoords($out){
-	$coords = array("latitude","longitude");
+	$coords = array('latitude','longitude');
 	$date = array(1,60,3600);
 	foreach($coords as $k => $v){
 		$lats = '';
-		$lat = explode(",", $out[$k]);
+		$lat = explode(',', $out[$k]);
 		for($i = 0; $i <= 2; $i++){
-			$c = explode("/", $lat[$i]);
+			$c = explode('/', $lat[$i]);
 			$lats += $c[0] / $c[1] / $date[$i];
 		}
 		unset($coords[$k]);
